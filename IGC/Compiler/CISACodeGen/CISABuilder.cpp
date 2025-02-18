@@ -6133,9 +6133,6 @@ namespace IGC
                 else {
                     if (modMD->stringConstants.count(G))
                     {
-                        ConstantDataSequential* cds = dyn_cast<ConstantDataSequential>(G->getInitializer());
-                        IGC_ASSERT(cds && (cds->isCString() || cds->isString()));
-                        (void) cds;
                         programSyms.globalStringConst.emplace_back((vISA::GenSymType)symbolEntry.s_type, symbolEntry.s_offset, symbolEntry.s_size, G->getName().str());
                     }
                     else
